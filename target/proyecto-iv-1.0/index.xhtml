@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VIAJES Y TURISMO S.A</title>
+
+    <link href="https://fonts.cdnfonts.com/css/miami" rel="stylesheet"/>
+    <link href="https://fonts.cdnfonts.com/css/engender-mod-font" rel="stylesheet"/>
+    <link rel="stylesheet" href="resources/css/design.css"/>
+</h:head>
+<h:body class="cuerpo">
+    <main>
+        <header id="up">
+            <nav >
+                <ul class="menu-principal">
+                    <li class="menu-principal__item"><a href="index.xhtml">INICIO(0)</a></li>
+                    <li class="menu-principal__item"><a href="acceder.xhtml">ACCEDER</a></li>
+                    <li class="menu-principal__item"><a href="acerca.xhtml">INFORMACIÓN</a></li>
+                    <li> <h:inputText size="10" value="#{usuarioBean.usuarioAutentico.nombre}" disabled="true" /> </li>
+                    <li> <h:form><h:commandButton action="#{usuarioBean.desautenticar()}" value="exit" ></h:commandButton></h:form></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="bienvenida">
+        <h1 class="tituloprincipal" id="sup">BIENVENIDO A VIAJES Y TURISMO S.A</h1>
+    </div>
+        <div class="selectores">
+        <h1 class="tituloprincipal">Elija su siguiente destino</h1>
+        <div class="contenedorpacks">
+            
+            <a href="solitariopack.xhtml" class="nosub">
+            <div class="pack" id="individual">
+                <p>paquetes individual</p>
+            </div></a>
+
+            <a href="parejapack.xhtml" class="nosub">
+            <div class="pack"   id="pareja" >
+                <p> paquetes en pareja</p>
+            </div></a>
+
+            <a href="familiarpack.xhtml" class="nosub">
+            <div class="pack" id="familiar">
+                <p>paquetes familiares</p>
+            </div></a>
+
+            <a href="tour-pack.xhtml" class="nosub">
+            <div class="pack" id="tour">
+                <p>paquetes tour grupal</p>
+            </div></a>
+
+            <a href="cultural-pack.xhtml" class="nosub">
+            <div class="pack" id="cultural">
+                <p>paquetes culturales</p>
+            </div></a>
+
+            <a href="gastronomico-pack.xhtml" class="nosub">
+            <div class="pack" id="gastronomico">
+                <p>paquetes gastronomicos</p>
+            </div></a>
+
+            <a href="estudiantil-pack.xhtml" class="nosub">
+            <div class="pack" id="estudiantil">
+            <p>paquetes para estudiantes - educativo</p>
+            </div></a>
+
+            <a href="relajarse-pack.xhtml" class="nosub">
+            <div class="pack" id="relajarse">
+             <p>paquetes para relajarse</p>
+            </div></a>
+
+            <a href="deporte-pack.xhtml" class="nosub">
+            <div class="pack" id="deporte">
+                <p>paquetes de deporte</p>
+            </div></a>
+
+            <a href="extremo-pack.xhtml" class="nosub">
+            <div class="pack" id="extremo">
+                <p>paquetes de deporte extremo</p>
+            </div></a>
+
+            <a href="naturaleza-pack.xhtml" class="nosub">
+            <div class="pack" id="naturaleza">
+                <p>paquetes naturaleza</p>
+            </div></a>
+
+            <a href="animales-pack.xhtml" class="nosub">
+            <div class="pack" id="animales">
+                <p>paquetes animales</p>
+            </div></a>
+
+        </div>
+    </div>
+
+        <div class="selectores">
+          <h2 class="tituloprincipal">SUGERENCIAS Y COMENTARIOS!</h2>
+          <h:form action="#" class="formulario">
+              <label for="nombre">Ingrese su nombre completo.<br/>
+                  <h:inputText id="nombre" value="#{usuarioBean.nameCom}" size="50"/><br/>
+              </label>
+              <label for="correo">Ingrese un correo.<br/>
+                  <h:inputText id="correo"  value="#{usuarioBean.correoCom}" size="50"/><br/>
+              </label>
+              <label for="comentario">Ingrese su comentario.<br/>
+                  <h:inputTextarea id="comentario" value="#{usuarioBean.com}" cols="50" rows="6"/><br/> <br/>
+                </label>
+              <label >CALIFICA TU EXPERIENCIA!<br/></label>
+                 <center><h:selectOneRadio value="#{usuarioBean.calificacionCom}">
+                      <f:selectItem itemValue="1" itemLabel="horribe"></f:selectItem>
+                      <f:selectItem itemValue="2" itemLabel="mal"></f:selectItem>
+                      <f:selectItem itemValue="3" itemLabel="regular"></f:selectItem>
+                      <f:selectItem itemValue="4" itemLabel="BIEN"></f:selectItem>
+                      <f:selectItem itemValue="5" itemLabel="EXCELENTE"></f:selectItem>
+                  </h:selectOneRadio></center>
+              <br/>
+              <h:commandButton class="botonesimple" action="#{usuarioBean.comentar()}" value="Enviar comentarios" /><br/> <br/>
+              <h:outputText value="#{usuarioBean.exitoCom}"></h:outputText>
+          </h:form>
+        </div>
+         
+<br/>
+<a class="menu-principal__item" href="#sup">ir arriba!</a>
+    </main>
+    <script src="resources/js/funcionalidades.js"></script>
+</h:body>
+</html>
