@@ -47,7 +47,7 @@ public class PackBean implements Serializable{
         return "actualizar-paquete.xhtml?faces-redirect=true";
     }
     public String crear(int id){
-        idEmpleado =id;
+        idEmpleado = id;
         conocerPrecio();
         if(paqueteService.crear(this.paquete)){
             System.out.println("Creado Exitosamente");
@@ -206,6 +206,10 @@ public class PackBean implements Serializable{
     public String limpiar(){
         paquete=new Pack();
         return "crearpack.xhtml?faces-redirect=true";
+    }
+
+    public void generarCSV(){
+        paqueteService.generarCSV();
     }
 
 }

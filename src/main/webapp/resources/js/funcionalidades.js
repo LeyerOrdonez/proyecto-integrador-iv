@@ -117,9 +117,6 @@ function seleccion(identify){
    
 }
 
-function error(){
-    alert("error comprarndo el paquete  vuelva a autenticarse");
-}
 
 /*
 function selection(){

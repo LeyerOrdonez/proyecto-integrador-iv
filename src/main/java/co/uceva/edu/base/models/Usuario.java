@@ -1,12 +1,13 @@
 package co.uceva.edu.base.models;
 
 public class Usuario {
-
     private long telefono,otroTelefono;
-    private String nombre,correo,nacimiento,otroNombre,id,idPack;
+
+    private double cuota;
+    private String nombre,correo,nacimiento,otroNombre,id,idPack,conCredito;
 
 
-    public Usuario(String id, String nombre, String correo,long telefono, long otroTelefono, String nacimiento, String otroNOmbre, String idPack) {
+    public Usuario(String id, String nombre, String correo,long telefono, long otroTelefono, String nacimiento, String otroNOmbre, String idPack,long cuota, String conCredito) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
@@ -15,6 +16,8 @@ public class Usuario {
         this.nacimiento=nacimiento;
         this.otroNombre = otroNOmbre;
         this.idPack=idPack;
+        this.cuota=cuota;
+        this.conCredito=conCredito;
 
     }
 
@@ -27,6 +30,8 @@ public class Usuario {
         this.nacimiento="";
         this.otroNombre = "";
         this.idPack="";
+        this.conCredito="NO";
+        this.cuota=0.0;
     }
 
     public String getId() {
@@ -93,6 +98,22 @@ public class Usuario {
 
     public void setIdPack(String idPack) {
         this.idPack = idPack;
+    }
+
+    public double getCuota() {
+        return cuota;
+    }
+
+    public void setCuota(double cuota) {
+        this.cuota = cuota;
+    }
+
+    public String getConCredito() {
+        return conCredito;
+    }
+
+    public void setConCredito(String conCredito) {
+        this.conCredito = conCredito;
     }
 
     @Override

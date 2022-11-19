@@ -30,7 +30,7 @@ public class PackRepository {
                 pk.setNoches(rs.getInt("noches"));
                 pk.setPrecio(rs.getLong("precio"));
                 pk.setTipo(rs.getString("tipo"));
-                pk.setsN(rs.getString("fecha"));
+                pk.setFecha(rs.getString("fecha"));
                 listadoPaquetes.add(pk);
             }
 

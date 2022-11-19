@@ -26,6 +26,7 @@
                 <li class="menu-principal__item"><a href="index.xhtml">INICIO</a></li>
                 <li class="menu-principal__item"><a href="listar-paquetes-adm.xhtml">LISTAR PAQUETES</a></li>
                 <li class="menu-principal__item"><a href="listar-usuarios-adm.xhtml">LISTAR USUARIOS</a></li>
+                <li class="menu-principal__item"><a href="ver-comentarios.xhtml">VER COMENTARIOS</a></li>
                 <li class="menu-principal__item"><a href="acerca.xhtml">INFORMACIÓN</a></li>
             </ul>
         </nav>
@@ -71,6 +72,7 @@
                 </p:dataTable>
 
                 <p:commandButton styleClass="ui-button-primary" value="#{msgs['tradInsertar']}" action="#{empleadoBean.irCrear()}"></p:commandButton>
+                <p:commandButton styleClass="ui-button-primary" value="generar listado csv" action="#{empleadoBean.generarCSV()}"></p:commandButton>
 
                 <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width=" 350">
                 <p:commandButton value="NO" type="button" styleClass="ui-confirmdialog-no ui-button-flat"></p:commandButton>

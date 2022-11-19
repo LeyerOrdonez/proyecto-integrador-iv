@@ -66,7 +66,7 @@
                             <br/>
                             <p:commandButton styleClass="ui-button-primaryr"
                                              value="comprar paquete a credito!"
-                                             action="#"
+                                             action="#{usuarioBean.amortizacion(paquete.precio,10,paquete.id)}"
                                              update="formdatos:tbldatos">
                             </p:commandButton><br/>
 
@@ -118,25 +118,28 @@
 
         <div class="selectores">
             <h2 class="tituloprincipal">SUGERENCIAS Y COMENTARIOS!</h2>
-            <form action="#" class="formulario">
+            <h:form action="#" class="formulario">
                 <label for="nombre">Ingrese su nombre completo.<br/>
-                    <input type="text" id="nombre" placeholder="aqui el nombre de usuario..."/><br/>
+                    <h:inputText id="nombre" value="#{usuarioBean.nameCom}" size="50"/><br/>
                 </label>
                 <label for="correo">Ingrese un correo.<br/>
-                    <input type="email" id="correo" placeholder="aqui el correo..."/><br/>
+                    <h:inputText id="correo"  value="#{usuarioBean.correoCom}" size="50"/><br/>
                 </label>
                 <label for="comentario">Ingrese su comentario.<br/>
-                    <textarea id="comentario" rows="4" cols="20" placeholder="Escribe tu comentario"> </textarea><br/> <br/>
+                    <h:inputTextarea id="comentario" value="#{usuarioBean.com}" cols="50" rows="6"/><br/> <br/>
                 </label>
-                <label for="comentario">CALIFICA TU EXPERIENCIA!<br/>
-                    <input type="radio" name="calificacion" >Excelente</input>
-                    <input type="radio" name="calificacion">Buena</input>
-                    <input type="radio" name="calificacion">regular</input>
-                    <input type="radio" name="calificacion">Mala</input>
-                    <input type="radio" name="calificacion">Horrible</input>
-                </label><br/>
-                <input class="botonesimple" type="submit" value="Enviar" />
-            </form>
+                <label >CALIFICA TU EXPERIENCIA!<br/></label>
+                <center><h:selectOneRadio value="#{usuarioBean.calificacionCom}">
+                    <f:selectItem itemValue="1" itemLabel="horribe"></f:selectItem>
+                    <f:selectItem itemValue="2" itemLabel="mal"></f:selectItem>
+                    <f:selectItem itemValue="3" itemLabel="regular"></f:selectItem>
+                    <f:selectItem itemValue="4" itemLabel="BIEN"></f:selectItem>
+                    <f:selectItem itemValue="5" itemLabel="EXCELENTE"></f:selectItem>
+                </h:selectOneRadio></center>
+                <br/>
+                <h:commandButton class="botonesimple" action="#{usuarioBean.comentar()}" value="Enviar comentarios" /><br/> <br/>
+                <h:outputText value="#{usuarioBean.exitoCom}"></h:outputText>
+            </h:form>
         </div>
         <br/>
 

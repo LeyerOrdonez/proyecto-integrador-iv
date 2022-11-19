@@ -117,5 +117,8 @@ public class EmpleadoBean implements Serializable {
         this.empleadoAutentico = empleadoAutentico;
     }
 
+public void generarCSV(){
+        empleadoService.generarCSV();
+}
 
 }

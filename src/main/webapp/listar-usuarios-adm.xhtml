@@ -26,6 +26,7 @@
                 <li class="menu-principal__item"><a href="index.xhtml">INICIO</a></li>
                 <li class="menu-principal__item"><a href="listar-paquetes-adm.xhtml">LISTAR PAQUETES</a></li>
                 <li class="menu-principal__item"><a href="listar-empleados.xhtml">LISTAR EMPLEADOS</a></li>
+                <li class="menu-principal__item"><a href="ver-comentarios.xhtml">VER COMENTARIOS</a></li>
                 <li class="menu-principal__item"><a href="acerca.xhtml">INFORMACIÓN</a></li>
             </ul>
         </nav>
@@ -56,6 +57,12 @@
             <p:column headerText="telefono alterno">
                 <h:outputText value="#{usuario.otroTelefono}"/>
             </p:column>
+            <p:column headerText="credito">
+                <h:outputText value="#{usuario.conCredito}"/>
+            </p:column>
+            <p:column headerText="cuota">
+                <h:outputText value="#{usuario.cuota}"/>
+            </p:column>
             <p:column headerText="#{msgs['tradCentroAcciones']}">
                 <p:commandButton styleClass="ui-button-danger"
                                  value="#{msgs['tradEliminar']}"
@@ -72,6 +79,8 @@
         </p:dataTable>
 
         <p:commandButton styleClass="ui-button-primary" value="añadir manualmente" action="#{usuarioBean.irCrear()}"></p:commandButton>
+        <p:commandButton styleClass="ui-button-primary" value="imprimir listado CSV" action="#{usuarioBean.generarCSV()}"></p:commandButton>
+
 
         <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width=" 350">
             <p:commandButton value="NO" type="button" styleClass="ui-confirmdialog-no ui-button-flat"></p:commandButton>
