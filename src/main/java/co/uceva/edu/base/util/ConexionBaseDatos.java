@@ -10,7 +10,7 @@ public class ConexionBaseDatos{
     private static String username = "root";
     private static String password = "sasa";
     
-    /*sto se va a descontrollaaaaar*/
+
 
     private ConexionBaseDatos(){
 
