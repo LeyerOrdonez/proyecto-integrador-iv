@@ -1,4 +1,5 @@
 package co.uceva.edu.base.beans;
+
 import co.uceva.edu.base.models.Coment;
 import co.uceva.edu.base.models.Pack;
 import co.uceva.edu.base.models.Usuario;
@@ -26,7 +27,6 @@ public class UsuarioBean implements Serializable {
     private Usuario usuario;
     private String warningMessage="";
     private Usuario usuarioAutentico;
-
     protected float interes = (float) 0.19;
     protected float inflacion = (float) 0.12;
 

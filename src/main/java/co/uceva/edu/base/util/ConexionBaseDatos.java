@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConexionBaseDatos {
+public class ConexionBaseDatos{
 
     private static String url = "jdbc:sqlite:C:\\Users\\USUARIO\\Documents\\IntelligentIde\\proyecto-integrador-iv\\proyecto.sqlite";  //sqlite= nombre del driver
     private static String username = "root";
