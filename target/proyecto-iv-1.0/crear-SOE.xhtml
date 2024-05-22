@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Crear Usuario</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VIAJES Y TURISMO S.A</title>
+    <link rel="stylesheet" href="resources/css/design.css"/>
+    <link href="https://fonts.cdnfonts.com/css/miami" rel="stylesheet"/>
+    <link href="https://fonts.cdnfonts.com/css/engender-mod-font" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
+</h:head>
+
+<h:body>
+    <header id="up">
+        <nav >
+            <ul class="menu-principal">
+                <li class="menu-principal__item"><a href="listar-SOE-adm.xhtml">Listar SOE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1  class="tituloprincipal" >CENTRO DE GESTION DE SOE</h1>
+
+    <h2>Crear SOE nuevo</h2>
+    <p:messages id="mensajes" showDetails="false" autoUpdate="true" /> <!-- para lgin menajs-->
+    <h:form id="formdatos2">
+        <div class="mb-3">
+            <label for="id" class="form-label">ID</label>
+            <h:inputText class="form-control" id="id" value="#{sOEBean.soe.id}"/>
+        </div>
+        <div class="mb-3">
+            <label for="avionid" class="form-label">identificador del avion</label>
+            <h:inputText class="form-control" id="avionid" value="#{sOEBean.soe.avionid}"/>
+        </div>
+        <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad presente en el avion</label>
+            <h:inputText class="form-control" id="cantidad" value="#{sOEBean.soe.cantidad}"/>
+        </div>
+        <div class="mb-3">
+            <label for="fecha_revision" class="form-label">fecha de revision</label>
+            <h:inputText class="form-control" id="fecha_revision" value="#{sOEBean.soe.fechaRevis}"/>
+        </div>
+
+        <div class="mb-3">
+            <p:commandButton value="Guardar" action="#{sOEBean.crearSOE()}">
+            <p:confirm header="exito" message="la operacion se realizo con exito"></p:confirm>
+            </p:commandButton>
+        </div>
+
+        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width=" 350">
+            <p:commandButton value="Listo!" type="button" styleClass="ui-confirmdialog-yes"></p:commandButton>
+        </p:confirmDialog>
+    </h:form>
+
+</h:body>
+
+</html>

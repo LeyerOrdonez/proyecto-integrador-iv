@@ -1,16 +1,12 @@
 package co.uceva.edu.base.beans;
 
 import co.uceva.edu.base.models.Coment;
-import co.uceva.edu.base.models.Pack;
 import co.uceva.edu.base.models.Usuario;
 import co.uceva.edu.base.services.UsuarioService;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Default;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.swing.*;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

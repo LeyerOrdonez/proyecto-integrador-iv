@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VIAJES Y TURISMO S.A</title>
+    <link rel="stylesheet" href="resources/css/design.css"/>
+    <link href="https://fonts.cdnfonts.com/css/miami" rel="stylesheet"/>
+    <link href="https://fonts.cdnfonts.com/css/engender-mod-font" rel="stylesheet"/>
+</h:head>
+<h:body class="cuerpo" >
+    <main>
+        <header id="up">
+            <nav >
+                <ul class="menu-principal">
+                    <li class="menu-principal__item"><a href="index.xhtml">INICIO</a></li>
+                    <li class="menu-principal__item"><a href="acceder.xhtml">ACCEDER</a></li>
+                    <li class="menu-principal__item"><a href="acerca.xhtml">INFORMACIÓN (0)</a></li>
+                    <li> <h:inputText size="10" value="#{usuarioBean.usuarioAutentico.nombre}" disabled="true" /> </li>
+                    <li> <h:form><h:commandButton action="#{usuarioBean.desautenticar()}" value="exit" ></h:commandButton></h:form></li>
+                </ul>
+            </nav>
+        </header>
+        <h1 class="tituloprincipal" id="sup">VIAJES Y TURISMO S.A</h1>
+        
+        <div class="selectores">
+            <h2 class="tituloprincipal">ACERCA DE NUESTRA EMPRESA</h2>  
+            <p class="texto"> la empresa TURISMO S.A es una empresa de viajes encargada
+                 de gestionar y vener paquetes para viajar a distintas partes del pais y del mundo. nuestro sistema consta de 
+                 distintas categorias que puede seleccionar para escoger el  paquete que  mejor se adapte a su 
+                 necesidad de viaje lo que hace a nuestro sistema muy versatil y eficiente para 
+                 lograr la mejor experiencia de usuario, esta empresa fue fundada en 2022 como parte de un proyecto de 
+                 investigacion de analsis de viajes e el sector turismo y en base a la misma se ha creado una empresa que 
+                 conoce las necesidades y los estandares de calidad que los usuarios esperan de su viaje. por lo anteriormente
+                  mencionado es que garantizamos que su viaje en manos de nestra empresa será el mejor que haya probado.</p>
+            <div class="packacerca">
+                <div class="texto"><h3 class="tituloprincipal">MISION</h3>
+                    <p >La empresa de viajes TURISMO S.A es una empresa con potencial de impulsar la economia
+                         en el sector turismo y a su vez de las regiones en donde estan sus principales sucursales 
+                         en el país, con proyeccion sostenible, confianza, eficiencia, responsabiidad social  y con 
+                         especial cuiado del medio ambiente para lograr que la empresa continue su trayectoria</p>
+                </div>
+                <div class="texto"><h3 class="tituloprincipal">VISION</h3> 
+                    <p>La empresa de viajes y turismo TURISMO S.A en el 2050 será el maximo 
+                        referente del sector turismo en el territorio nacional y uno de los mas fuertes en sus
+                         sucursales extranjeras, con un impacto ambiental, cultural, social y economico muy positivo 
+                         en las localidades en las que se encuentra posicionda e impulsando el desarrollo a nivel mundial. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="selectores">
+            <h3 class="tituloprincipal">INFORMACION DE CONTACTO - software</h3>  
+            <div class="packacerca">
+                <div class="texto"><h4 class="tituloprincipal">facebook</h4>
+                    <a  href=""><img class="imageicono" src="resources/imagenes/facebook.png" alt="facebook"/></a>
+                </div>
+                <div class="texto"><h4 class="tituloprincipal">twiter</h4> 
+                    <a href=""> <img class="imageicono" src="resources/imagenes/twiteer.png" alt="twitter"/></a>
+                </div>
+                <div class="texto"><h4 class="tituloprincipal">youtube</h4> 
+                    <a href=""> <img  width="80px" height="50px" src="resources/imagenes/youtube.png" alt="youtube"  /></a>
+                </div>
+                <div class="texto"><h4 class="tituloprincipal">instangram</h4> 
+                    <a href=""><img class="imageicono" src="resources/imagenes/instangram.png" alt="instangram"/></a>
+                </div>
+                <div class="texto"><h4 class="tituloprincipal">programador 1</h4> 
+                    <a href=""> <img class="imageicono" src="resources/imagenes/email.png" alt="email"/></a>
+                    <a href="juan.salgado02@uceva.edu.co"></a>
+                    230211024
+                </div>
+                <div class="texto"><h4 class="tituloprincipal">programador 2</h4> 
+                    <a href=""><img class="imageicono" src="resources/imagenes/email.png" alt="email"/></a>
+                    <a href="leyer.ordonez01@uceva.edu.co"/>
+                    23211001
+                </div>
+            </div>
+        </div>
+
+        <div class="selectores">
+        <p class="textoilegible"> Todos los derchos reservados a la empresa TURISMO S.A.
+             operacion y precios vigentes desde el año 2022 y hasta nuevo aviso, la empresa no se compromete a 
+             cubrir gastos adicionales al viaje ni perdidas o extravios en el vuelo, hotel, residencia
+             o excursion pertinente ®TURISMO SA - ©2022</p>
+        </div>
+         
+<a href="#sup">arriba!</a>
+    </main>
+    <script src="resources/js/funcionalidades.js"></script>
+</h:body>
+</html>

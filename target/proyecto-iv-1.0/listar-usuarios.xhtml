@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listado de Usuarios</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VIAJES Y TURISMO S.A</title>
+    <link rel="stylesheet" href="resources/css/design.css"/>
+    <link href="https://fonts.cdnfonts.com/css/miami" rel="stylesheet"/>
+    <link href="https://fonts.cdnfonts.com/css/engender-mod-font" rel="stylesheet"/>
+</h:head>
+
+<h:body>
+
+    <header id="up">
+        <nav >
+            <ul class="menu-principal">
+                <li class="menu-principal__item"><a href="index.xhtml">INICIO</a></li>
+                <li class="menu-principal__item"><a href="listar-paquetes.xhtml">LISTAR PAQUETES</a></li>
+                <li class="menu-principal__item"><a href="acerca.xhtml">INFORMACIÓN</a></li>
+                <li> <h:inputText size="10" value="#{empleadoBean.empleadoAutentico.nombre}" disabled="true" /> </li>
+                <li> <h:form><h:commandButton action="#{empleadoBean.desautenticar()}" value="exit" ></h:commandButton></h:form></li>
+            </ul>
+        </nav>
+    </header>
+    <h1  class="tituloprincipal" >CENTRO DE GESTION DE USUARIOS TURISMO S.A.</h1>
+
+            <h:form id="formdatos2">
+
+                <p:dataTable id="tbldatos2" value="#{usuarioBean.listarUsuario()}" var="usuario">
+                    <p:column headerText="ID">
+                        <h:outputText value="#{usuario.id}"/>
+                    </p:column>
+                    <p:column headerText="#{msgs['tradNombre']}">
+                        <h:outputText value="#{usuario.nombre}"/>
+                    </p:column>
+                    <p:column headerText="correo">
+                        <h:outputText value="#{usuario.correo}"/>
+                    </p:column>
+                    <p:column headerText="fecha de nacimiento">
+                        <h:outputText value="#{usuario.nacimiento}"/>
+                    </p:column>
+                    <p:column headerText="telefono">
+                        <h:outputText value="#{usuario.telefono}"/>
+                    </p:column>
+                    <p:column headerText="nombre alterno">
+                        <h:outputText value="#{usuario.otroNombre}"/>
+                    </p:column>
+                    <p:column headerText="telefono alterno">
+                        <h:outputText value="#{usuario.otroTelefono}"/>
+                    </p:column>
+                <p:column headerText="credito">
+                    <h:outputText value="#{usuario.conCredito}"/>
+                </p:column>
+                <p:column headerText="cuota">
+                    <h:outputText value="#{usuario.cuota}"/>
+                </p:column>
+                    <p:column headerText="#{msgs['tradCentroAcciones']}">
+                        <p:commandButton styleClass="ui-button-danger"
+                                         value="#{msgs['tradEliminar']}"
+                                         action="#{usuarioBean.eliminarUsuario(usuario.id)}"
+                                         update="formdatos2:tbldatos2">
+                            <p:confirm header="#{msgs['tradEliminar']}" message="Esta seguro de lo que va a hacer??"></p:confirm>
+                        </p:commandButton>
+                        <p:commandButton styleClass="ui-button-primaryr"
+                                         value="actualizar info del usuario"
+                                         action="#{usuarioBean.irActualizarUsuario(usuario.id)}"
+                                         update="formdatos2:tbldatos2">
+                        </p:commandButton>
+                    </p:column>
+                </p:dataTable>
+
+                <p:commandButton styleClass="ui-button-primary" value="añadir manualmente" action="#{usuarioBean.irCrear()}"></p:commandButton>
+
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width=" 350">
+                    <p:commandButton value="NO" type="button" styleClass="ui-confirmdialog-no ui-button-flat"></p:commandButton>
+                    <p:commandButton value="SISAS!" type="button" styleClass="ui-confirmdialog-yes"></p:commandButton>
+                </p:confirmDialog>
+
+            </h:form>
+</h:body>
+</html>
